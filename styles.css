@@ -1,0 +1,3 @@
+html, body { height: 100%; }
+img { display: block; }
+.shadow-xl { box-shadow: 0 10px 25px rgba(0,0,0,.08); }

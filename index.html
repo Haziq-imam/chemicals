@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ChemPro – Industrial & Household Chemicals</title>
+  <meta name="description" content="Catalogue + cart + WhatsApp ordering for phenyl, acids, disinfectants." />
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: {
+            brand: { 600:'#0d85db',700:'#0b68ad' }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-2xl bg-brand-600 grid place-items-center text-white font-bold">DZ</div>
+        <div>
+          <h1 class="text-xl font-extrabold tracking-tight leading-5">ChemPro</h1>
+          <p class="text-xs text-slate-500 leading-3">Cleaners • Acids • Disinfectants</p>
+        </div>
+      </div>
+      <div class="ml-auto flex items-center gap-2 w-full max-w-xl">
+        <div class="relative flex-1">
+          <input id="searchInput" type="text" placeholder="Search products (e.g., phenyl, acid)" class="w-full rounded-xl border border-slate-300 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-600" />
+          <div class="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></div>
+        </div>
+        <select id="categoryFilter" class="rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-600">
+          <option value="all">All</option>
+          <option value="cleaner">Cleaner</option>
+          <option value="acid">Acid</option>
+          <option value="disinfectant">Disinfectant</option>
+        </select>
+        <select id="sortSelect" class="rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-600">
+          <option value="relevance">Sort: Relevance</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="alpha">A → Z</option>
+        </select>
+        <button id="openCartBtn" class="relative rounded-xl bg-brand-600 text-white px-4 py-2 font-semibold hover:bg-brand-700 transition">
+          Cart <span id="cartCountBadge" class="ml-2 inline-flex items-center justify-center rounded-full bg-white text-brand-700 text-xs w-6 h-6 font-bold">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-6 py-10">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight">Trusted chemicals for home & industry</h2>
+        <p class="mt-3 text-slate-600">Browse ready-to-ship phenyl, hydrochloric acid, bleaching agents, and disinfectants. Safety-first packaging. Bulk & retail sizes available.</p>
+        <div class="mt-5 flex gap-3">
+          <a href="#catalogue" class="rounded-xl bg-brand-600 text-white px-5 py-3 font-semibold hover:bg-brand-700 transition">Shop Products</a>
+          <a href="#safety" class="rounded-xl border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-100 transition">Safety & MSDS</a>
+        </div>
+      </div>
+      <div class="md:order-last order-first">
+        <div class="relative rounded-3xl shadow-xl overflow-hidden">
+          <!-- Replace with your own image in assets/images/hero.jpg and update src below if you want -->
+          <img src="/assets/images/main page.jpeg" alt="Chemical bottles" class="w-full h-64 md:h-full object-cover"/>
+          <div class="absolute bottom-3 right-3 bg-white/80 backdrop-blur rounded-xl px-3 py-2 text-sm font-medium text-slate-700">ISO-grade suppliers • QC tested</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalogue -->
+  <main id="catalogue" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+    <h3 class="text-2xl font-bold mb-4">Products</h3>
+    <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </main>
+
+  <!-- Safety & Compliance -->
+  <section id="safety" class="bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid md:grid-cols-3 gap-8">
+      <div class="md:col-span-2">
+        <h3 class="text-2xl font-bold">Safety & Compliance</h3>
+        <ul class="mt-4 space-y-2 text-slate-700 list-disc pl-5">
+          <li>Always read product labels and MSDS before use.</li>
+          <li>Wear appropriate PPE: gloves, mask/respirator, and eye protection.</li>
+          <li>Do not mix acids with bleach or ammonia. Use in ventilated areas.</li>
+          <li>Keep out of reach of children. Store in a cool, dry place away from sunlight.</li>
+        </ul>
+        <div class="mt-6">
+          <h4 class="font-semibold">MSDS Downloads</h4>
+          <div id="msdsList" class="mt-2 grid sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+        </div>
+      </div>
+      <aside class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+        <h4 class="font-semibold">Need bulk pricing?</h4>
+        <p class="text-sm text-slate-600 mt-1">We supply 5L, 25L and 200L drums. Get a custom quote for schools, hotels, hospitals & factories.</p>
+        <a href="#order" class="inline-block mt-4 rounded-xl bg-brand-600 text-white px-4 py-2 font-semibold hover:bg-brand-700">Request Quote</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Order / Contact -->
+  <section id="order" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-2xl font-bold">Checkout & Order</h3>
+        <p class="text-slate-600 mt-1">Fill your details and place the order on WhatsApp. No payment collected online.</p>
+        <form id="orderForm" class="mt-5 grid gap-4">
+          <div>
+            <label class="block text-sm font-medium">Full Name</label>
+            <input required name="name" class="w-full rounded-xl border border-slate-300 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-600" />
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium">Phone (WhatsApp)</label>
+              <input required name="phone" placeholder="03xx-xxxxxxx" class="w-full rounded-xl border border-slate-300 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-600" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium">City</label>
+              <input required name="city" placeholder="Karachi/Lahore/Islamabad" class="w-full rounded-xl border border-slate-300 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-600" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Address</label>
+            <textarea required name="address" rows="3" class="w-full rounded-xl border border-slate-300 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-600"></textarea>
+          </div>
+          <div class="flex items-center gap-3">
+            <button type="button" id="waOrderBtn" class="rounded-xl bg-brand-600 text-white px-5 py-3 font-semibold hover:bg-brand-700">Order via WhatsApp</button>
+            <button type="button" id="clearCartBtn" class="rounded-xl border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-100">Clear Cart</button>
+          </div>
+          <p class="text-xs text-slate-500">By ordering you agree to our terms and acknowledge handling hazardous materials responsibly.</p>
+        </form>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 h-fit">
+        <h4 class="text-lg font-semibold">Your Cart</h4>
+        <div id="cartItems" class="mt-4 space-y-3"></div>
+        <div class="mt-4 flex items-center justify-between border-t pt-4">
+          <span class="font-semibold">Subtotal</span>
+          <span id="subtotal" class="font-bold">Rs 0</span>
+        </div>
+        <p class="text-xs text-slate-500 mt-2">Prices are inclusive of taxes where applicable. Shipping calculated on confirmation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid md:grid-cols-3 gap-6 text-sm">
+      <div>
+        <div class="text-xl font-extrabold">ChemPro</div>
+        <p class="text-slate-600 mt-2">Quality chemical supplies for homes & businesses in Pakistan.</p>
+      </div>
+      <div>
+        <div class="font-semibold">Company</div>
+        <ul class="mt-2 space-y-1 text-slate-600">
+          <li><a href="#catalogue" class="hover:underline">Products</a></li>
+          <li><a href="#safety" class="hover:underline">Safety & MSDS</a></li>
+          <li><a href="#order" class="hover:underline">Order</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold">Contact</div>
+        <p class="text-slate-600 mt-2">WhatsApp: <span class="font-medium">+92 3172912216</span><br>Email: sales@example.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div id="cartDrawer" class="fixed inset-0 z-50 hidden" aria-hidden="true">
+    <div class="absolute inset-0 bg-black/40" id="cartOverlay"></div>
+    <aside class="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-xl p-6 overflow-y-auto">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-bold">Cart</h3>
+        <button id="closeCartBtn" class="text-slate-500 hover:text-slate-800">✕</button>
+      </div>
+      <div id="cartItemsDrawer" class="mt-4 space-y-3"></div>
+      <div class="mt-4 flex items-center justify-between border-t pt-4">
+        <span class="font-semibold">Subtotal</span>
+        <span id="subtotalDrawer" class="font-bold">Rs 0</span>
+      </div>
+      <a href="#order" id="gotoCheckout" class="mt-4 inline-block rounded-xl bg-brand-600 text-white px-5 py-3 font-semibold hover:bg-brand-700">Go to Checkout</a>
+    </aside>
+  </div>
+
+  <!-- Your JS -->
+  <script src="js/app.js"></script>
+</body>
+</html>

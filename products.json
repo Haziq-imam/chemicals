@@ -1,0 +1,56 @@
+[
+  {
+    "id": "phenyl-1l",
+    "name": "White Phenyl 1L",
+    "category": "cleaner",
+    "price": 350,
+    "msds": "assets/msds/white-phenyl.pdf",
+    "img": "assets/images/phenyl-1l.jpg.jpeg",
+    "desc": "Multipurpose floor cleaner. Pleasant fragrance. For mopping and surfaces."
+  },
+  {
+    "id": "phenyl-5l",
+    "name": "White Phenyl 5L",
+    "category": "cleaner",
+    "price": 1500,
+    "msds": "assets/msds/white-phenyl.pdf",
+    "img": "assets/images/00 (17).jpeg",
+    "desc": "Economy 5L pack for offices & institutions."
+  },
+  {
+    "id": "hcl-33",
+    "name": "Hydrochloric Acid 33%",
+    "category": "acid",
+    "price": 600,
+    "msds": "assets/msds/hcl-33.pdf",
+    "img": "assets/images/00 (18).jpeg",
+    "desc": "For descaling & heavy-duty cleaning. Handle with extreme care."
+  },
+  {
+    "id": "bleach-5",
+    "name": "Sodium Hypochlorite 5% (Bleach)",
+    "category": "disinfectant",
+    "price": 450,
+    "msds": "assets/msds/bleach-5.pdf",
+    "img": "assets/images/00 (19).jpeg",
+    "desc": "Surface disinfection & whitening. Do not mix with acids."
+  },
+  {
+    "id": "phenyl-black",
+    "name": "Black Phenyl 1L",
+    "category": "cleaner",
+    "price": 400,
+    "msds": "assets/msds/black-phenyl.pdf",
+    "img": "assets/images/00 (20).jpeg",
+    "desc": "Strong disinfectant & deodorizer for tough smells."
+  },
+  {
+    "id": "hand-sanitizer",
+    "name": "Hand Sanitizer 500ml",
+    "category": "disinfectant",
+    "price": 300,
+    "msds": "assets/msds/sanitizer.pdf",
+    "img": "assets/images/00 (21).jpeg",
+    "desc": "70% alcohol formula for quick hand hygiene."
+  }
+]
